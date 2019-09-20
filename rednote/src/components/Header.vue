@@ -11,7 +11,10 @@
           <span>Home</span>
           <v-icon right>mdi-home</v-icon>
         </v-btn>
-        <v-btn depressed @click="navto({name: 'about'})">About</v-btn>
+        <v-btn depressed @click="navto({name: 'about'})">
+          <span>About</span>
+          <v-icon right>mdi-account-circle</v-icon>
+        </v-btn>
       </v-toolbar-items>
     </v-toolbar>    
   </nav>
