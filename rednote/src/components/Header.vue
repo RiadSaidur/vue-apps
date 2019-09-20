@@ -8,12 +8,12 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn depressed @click="navto({name: 'home'})">
+          <v-icon left>mdi-home</v-icon>
           <span>Home</span>
-          <v-icon right>mdi-home</v-icon>
         </v-btn>
         <v-btn depressed @click="navto({name: 'about'})">
+          <v-icon left>mdi-account-circle</v-icon>
           <span>About</span>
-          <v-icon right>mdi-account-circle</v-icon>
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>    
