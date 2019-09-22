@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-toolbar flat app>
+    <v-toolbar flat>
       <v-toolbar-title>
         <span>RED</span>
         <span>note</span>

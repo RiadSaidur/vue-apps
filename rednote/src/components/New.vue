@@ -19,8 +19,31 @@ export default {
   },
   methods: {
     save(){
-      this.title='';
-      this.note='';
+      let key = 0;
+      if(localStorage.notes){
+        key = localStorage.key;
+        key++;
+        localStorage.key = key;
+        const newNote = {
+          id: key,
+          title: this.title,
+          note: this.note
+        };
+        let notes = JSON.parse(localStorage.notes);
+        notes.push(newNote);
+        console.log(notes);
+      } else{
+        localStorage.notes = key;
+        const newNote = {
+          id: key,
+          title: this.title,
+          note: this.note
+        };
+        localStorage.notes = JSON.stringify(newNote);
+        // console.log('shite again', localStorage.notes);
+      }
+      this.title = '';
+      this.note = '';
     }
   }
 }
