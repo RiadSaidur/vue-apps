@@ -26,11 +26,11 @@ export default {
   },
   mounted() {
     if (localStorage.notes) {
-      // console.log(JSON.parse(localStorage.notes));
       let note = JSON.parse(localStorage.notes);
-      this.notes = [...this.notes, note];
-      console.log(note);
-      console.log(this.notes);
+      const size = note.length;
+      for(let i=0; i<size; i++){
+        this.notes.push(note[i]);
+      }
     } else{
       console.log('shite');
     }
