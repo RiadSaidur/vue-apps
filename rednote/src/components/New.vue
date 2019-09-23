@@ -19,23 +19,34 @@ export default {
   },
   methods: {
     save(){
-      let key = 0;
+      let id = 0;
       if(localStorage.notes){
-        key = localStorage.key;
-        key++;
-        localStorage.key = key;
+        id = localStorage.id;
+        id++;
+        localStorage.id = id;
         const newNote = {
-          id: key,
+          id: id,
           title: this.title,
           note: this.note
         };
-        let notes = JSON.parse(localStorage.notes);
+        let notes = [];
+        const temp = JSON.parse(localStorage.notes);
+        const size = temp.length;
+        for(let i=0; i<size; i++){
+          notes.push(temp[i]);
+          // console.log(`${i} : ${notes}`);
+        }
+        // console.log(localStorage.notes);
+        // notes = [...notes];
         notes.push(newNote);
-        console.log(notes);
+        localStorage.notes = JSON.stringify(notes);
+        // console.log('shite again', localStorage.notes);
+        // console.log(notes);
+        console.log(JSON.parse(localStorage.notes));
       } else{
-        localStorage.notes = key;
+        localStorage.id = id;
         const newNote = {
-          id: key,
+          id: id,
           title: this.title,
           note: this.note
         };
