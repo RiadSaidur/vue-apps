@@ -2,8 +2,11 @@
   <nav>
     <v-toolbar flat>
       <v-toolbar-title>
-        <span>RED</span>
-        <span>note</span>
+        <!-- <span>RED</span>
+        <span>note</span> -->
+        <div class="image">
+          <v-img src="../assets/logo.svg" max-height="50" max-width="50" @click="navto({name: 'home'})"></v-img>
+        </div>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
@@ -29,3 +32,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .image{
+    cursor: pointer;
+  }
+</style>
