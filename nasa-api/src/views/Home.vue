@@ -7,10 +7,10 @@
 
       <v-list v-for="category in categories" :key="category.id">
 
-        <v-list-item  @click="navto(category.id)">
-          <v-card-text class="font-weight-black text-center">
-            <p>{{ category.title }}</p>
-          </v-card-text>
+        <v-list-item >
+          <v-btn flat @click="navto(category.id)">
+            {{ category.title }}
+          </v-btn>
         </v-list-item>
 
       </v-list>
