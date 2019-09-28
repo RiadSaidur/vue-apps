@@ -8,7 +8,7 @@
       <v-list v-for="category in categories" :key="category.id">
 
         <v-list-item >
-          <v-btn flat @click="navto(category.id)">
+          <v-btn @click="navto(category.id)" flat>
             {{ category.title }}
           </v-btn>
         </v-list-item>
