@@ -22,6 +22,11 @@ export default new Router({
       path: '/photofday',
       name: 'photofday',
       component:() => import('./components/PhotoOfDay.vue')
+    },
+    {
+      path: '/mars',
+      name: 'mars',
+      component:() => import('./components/Mars.vue')
     }
   ]
 })

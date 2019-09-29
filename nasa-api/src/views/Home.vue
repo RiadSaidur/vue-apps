@@ -8,7 +8,7 @@
       <v-list v-for="category in categories" :key="category.id">
 
         <v-list-item >
-          <v-btn @click="navto(category.id)" flat>
+          <v-btn @click="navto(category.id)" text>
             {{ category.title }}
           </v-btn>
         </v-list-item>
@@ -32,8 +32,8 @@ export default {
         },
         {
           id: 2,
-          title: `**Maybe I'll put something here**`,
-          route: `about`
+          title: `Mars Photo Archive`,
+          route: `mars`
         }
       ]
     }
