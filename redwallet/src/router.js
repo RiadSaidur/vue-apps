@@ -19,9 +19,10 @@ export default new Router({
       component: () => import('./views/About.vue')
     },
     {
-      path: '/expenses',
-      name: 'expenses',
-      component: () => import('./views/Expenses.vue')
+      path: '/transactions/:type',
+      name: 'transactions',
+      props: true,
+      component: () => import('./views/Transactions.vue')
     }
   ]
 })
