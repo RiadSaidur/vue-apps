@@ -13,10 +13,10 @@
       <v-btn text><v-icon>mdi-delete</v-icon></v-btn>
     </v-app-bar>
 
-    <v-content>
-      <Cash />
+    <v-content class="grey darken-2">
       <router-view></router-view>
-    </v-content>
+    </v-content >
+    <v-footer dark app><Cash /></v-footer>
   </v-app>
 </template>
 
