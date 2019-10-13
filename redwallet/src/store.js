@@ -11,13 +11,13 @@ export default new Vuex.Store({
         type: 'spend',
         title: 'books',
         amount: 300,
-        date:"27/6/2029"
+        date:"13/9/2019"
       },
       {
         type: 'income',
         title: 'salary',
         amount: 5500,
-        date:"27/6/2019"
+        date:"13/9/2019"
       },
       {
         type: 'spend',
@@ -29,7 +29,7 @@ export default new Vuex.Store({
         type: 'income',
         title: 'dhanda',
         amount: 500,
-        date:"27/6/2029"
+        date:"13/9/2019"
       },
       {
         type: 'spend',
@@ -42,20 +42,32 @@ export default new Vuex.Store({
         title: 'cake',
         amount: 2500,
         date:"27/6/2019"
-      }
+      },
+      {
+        type: 'income',
+        title: 'dhanda again',
+        amount: 900,
+        date:"13/9/2019"
+      },
     ]
   },
   getters:{
     today: state => {
+      let date = new Date();
+      date = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
       return state.logs.filter(log => {
-        return log.date === '27/6/2029';
+        return log.date === date;
       })
     }
   },
   mutations: {
-    
+    ADD_RECORD: (state, record) => {
+      state.logs.push(record);
+      if(record.type === 'income') state.cash += record.amount;
+      else if(record.type === 'spend') state.cash -= record.amount;
+    }
   },
   actions: {
-
+    
   }
 })
