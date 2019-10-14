@@ -23,6 +23,16 @@ export default new Router({
       name: 'transactions',
       props: true,
       component: () => import('./views/Transactions.vue')
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('./views/Settings.vue')
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import('./views/Profile.vue')
     }
   ]
 })
