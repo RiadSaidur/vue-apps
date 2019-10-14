@@ -6,18 +6,21 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     cash: 7000,
+    income: 5000,
+    budget: 3000,
+    savingTarget: 2000,
     logs:[
       {
         type: 'spend',
         title: 'books',
         amount: 300,
-        date:"13/9/2019"
+        date:"14/9/2019"
       },
       {
         type: 'income',
         title: 'salary',
         amount: 5500,
-        date:"13/9/2019"
+        date:"14/9/2019"
       },
       {
         type: 'spend',
@@ -29,7 +32,7 @@ export default new Vuex.Store({
         type: 'income',
         title: 'dhanda',
         amount: 500,
-        date:"13/9/2019"
+        date:"14/9/2019"
       },
       {
         type: 'spend',
@@ -47,7 +50,7 @@ export default new Vuex.Store({
         type: 'income',
         title: 'dhanda again',
         amount: 900,
-        date:"13/9/2019"
+        date:"14/9/2019"
       },
     ]
   },
@@ -65,9 +68,32 @@ export default new Vuex.Store({
       state.logs.push(record);
       if(record.type === 'income') state.cash += record.amount;
       else if(record.type === 'spend') state.cash -= record.amount;
+    },
+    UPDATE_CASH: (state, amounmt) => {
+      state.cash = amounmt;
+    },
+    UPDATE_INCOME: (state, amount) => {
+      state.income = amount;
+    },
+    UPDATE_BUDGET: (state, amount) => {
+      state.budget = amount;
+    },
+    UPDATE_TARGET: (state, amount) => {
+      state.savingTarget = amount;
     }
   },
   actions: {
-    
+    updateCash: (context, payload) => {
+      context.commit('UPDATE_CASH', payload);
+    },
+    updateIncome: (context, payload) => {
+      context.commit('UPDATE_INCOME', payload);
+    },
+    updateBudget: (context, payload) => {
+      context.commit('UPDATE_BUDGET', payload);
+    },
+    updateTarget: (context, payload) => {
+      context.commit('UPDATE_TARGET', payload);
+    }
   }
 })
