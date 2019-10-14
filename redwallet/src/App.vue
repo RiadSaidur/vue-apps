@@ -8,9 +8,9 @@
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <router-link to='/about'><v-btn text><v-icon>mdi-calendar</v-icon></v-btn></router-link>
-      <router-link to='/'><v-btn text><v-icon>mdi-home</v-icon></v-btn></router-link>
-      <v-btn text><v-icon>mdi-delete</v-icon></v-btn>
+      <router-link to='/about'><v-btn text><v-icon>mdi-calendar-outline</v-icon></v-btn></router-link>
+      <router-link to='/'><v-btn text><v-icon>mdi-home-outline</v-icon></v-btn></router-link>
+      <router-link to='/profile'><v-btn text><v-icon>mdi-account-outline</v-icon></v-btn></router-link>
     </v-app-bar>
 
     <v-content class="grey darken-2">
