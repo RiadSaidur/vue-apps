@@ -69,31 +69,16 @@ export default new Vuex.Store({
       if(record.type === 'income') state.cash += record.amount;
       else if(record.type === 'spend') state.cash -= record.amount;
     },
-    UPDATE_CASH: (state, amounmt) => {
-      state.cash = amounmt;
-    },
-    UPDATE_INCOME: (state, amount) => {
-      state.income = amount;
-    },
-    UPDATE_BUDGET: (state, amount) => {
-      state.budget = amount;
-    },
-    UPDATE_TARGET: (state, amount) => {
-      state.savingTarget = amount;
+    UPDATE: (state, collection) => {
+      state.cash = collection.cash;
+      state.income = collection.income;
+      state.budget = collection.budget;
+      state.savingTarget = collection.target;
     }
   },
   actions: {
-    updateCash: (context, payload) => {
-      context.commit('UPDATE_CASH', payload);
-    },
-    updateIncome: (context, payload) => {
-      context.commit('UPDATE_INCOME', payload);
-    },
-    updateBudget: (context, payload) => {
-      context.commit('UPDATE_BUDGET', payload);
-    },
-    updateTarget: (context, payload) => {
-      context.commit('UPDATE_TARGET', payload);
+    setData: (context, collection) => {
+      context.commit('UPDATE', collection);
     }
   }
 })
