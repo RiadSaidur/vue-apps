@@ -1,6 +1,6 @@
 <template>
   <v-conatiner>
-    <v-card class="mx-auto" height="100%" max-width="500" dark>
+    <v-card class="mx-auto" height="100%" max-width="720" dark>
       <v-list>
         <v-list-item-group v-for="(items, index) in menuItems" :key='index'>
           <router-link :to='items.link'>
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'Profile',
   data(){
@@ -29,17 +31,23 @@ export default {
           title: 'Settings'
         },
         {
-          link: '/settings',
+          link: '/about',
           icon: 'mdi-settings-outline',
-          title: 'Settings'
-        },
-        {
-          link: '/settings',
-          icon: 'mdi-settings-outline',
-          title: 'Settings'
+          title: 'About'
         }
       ]
     }
+  },
+  methods: {
+    ...mapMutations([
+      'CHANGE_TAB'
+    ]),
+    updateTitle(){
+      this.CHANGE_TAB(this.$route.name);
+    }
+  },
+  mounted(){
+    this.updateTitle();
   }
 }
 </script>
