@@ -20,7 +20,7 @@
     v-model="newTarget"
     dark
     ></v-text-field>
-    <Popup @accepted='updateStore' @canceled='formValues' />
+    <Popup @accepted='updateStore' @canceled='formValues' type='save' />
   </v-form>
 </template>
 

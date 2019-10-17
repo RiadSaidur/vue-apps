@@ -1,7 +1,5 @@
 <template>
   <v-container>
-    <h1 v-if="type === 'spend'" class="text-center mb-4 white--text">New Expense</h1>
-    <h1 v-else class="white--text">New Income</h1>
     <v-form @submit.prevent >
       <v-text-field
       label='Title'
@@ -14,7 +12,7 @@
       dark
       ></v-text-field>
     </v-form>
-    <Popup @accepted='addRecord' @canceled='resetForm' />
+    <Popup @accepted='addRecord' @canceled='resetForm' type='save' />
   </v-container>
 </template>
 
@@ -35,7 +33,8 @@ export default {
   },
   methods:{
     ...mapMutations([
-      'ADD_RECORD'
+      'ADD_RECORD',
+      'CHANGE_TAB'
     ]),
     validate(){
       if(this.title=='' || this.amount=='' || isNaN(this.amount)) return false;
@@ -59,7 +58,13 @@ export default {
     resetForm(){
       this.title = '';
       this.amount = '';
+    },
+    updateTitle(){
+      this.CHANGE_TAB(this.type);
     }
+  },
+  mounted(){
+    this.updateTitle();
   }
 };
 </script>

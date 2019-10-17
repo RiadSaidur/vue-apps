@@ -2,11 +2,11 @@
   <v-dialog v-model="dialog" width="500">
     <template v-slot:activator="{ on }">
       <v-btn
-        color="red lighten-2"
+        class="mb-2 red darken-4"
         dark
         v-on="on"
       >
-      Save
+      {{type}}
       </v-btn>
     </template>
     <v-card>
@@ -33,6 +33,9 @@
 <script>
 export default {
   name: 'Popup',
+  props:[
+    'type'
+  ],
   data(){
     return{
       dialog: false

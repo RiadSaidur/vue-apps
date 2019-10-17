@@ -2,7 +2,7 @@
   <v-container>
     <v-layout column class="my-4 align-center">
       <v-flex class="">
-        <v-card v-for="(log, index) in logs" :key='index' class="mb-2" width='500' dark>
+        <v-card v-for="(log, index) in logs" :key='index' @click="navto({path: `/items/${log.title}`})" class="mb-2" width='500' dark>
           <v-card-title class="pb-0">{{ log.title }}</v-card-title>
           <v-card-text class="pb-0">{{ log.date }}</v-card-text>
           <v-card-text>
@@ -36,6 +36,9 @@ export default {
     income: type => {
       if(type === 'income') return true;
       else return false;
+    },
+    navto(route){
+      this.$router.push(route);
     }
   },
   mounted(){
