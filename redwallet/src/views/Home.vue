@@ -14,16 +14,33 @@
         </v-btn>
       </router-link>
     </v-flex>
-    <TodayLog />
+    <LogItems :today='today'/>
   </v-container>
 </template>
 
 <script>
-import TodayLog from '../components/TodayLog';
+import { mapMutations, mapGetters } from 'vuex'
+import LogItems from '../components/LogItems'
 
 export default {
   components: {
-    TodayLog
+    LogItems
+  },
+  computed:{
+    ...mapGetters([
+      'today'
+    ])
+  },
+  methods: {
+    ...mapMutations([
+      'CHANGE_TAB'
+    ]),
+    updateTitle(){
+      this.CHANGE_TAB(this.$route.name);
+    }
+  },
+  mounted(){
+    this.updateTitle();
   }
 }
 </script>

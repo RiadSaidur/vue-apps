@@ -1,14 +1,9 @@
 <template>
   <v-app>
     <v-app-bar app dark>
-      <v-toolbar-title class="headline text-uppercase">
-        <router-link to='/'>
-          <span class="red--text">RED</span>
-          <span class="font-weight-light white--text">wallet</span>
-        </router-link>
-      </v-toolbar-title>
+      <Heading />
       <v-spacer></v-spacer>
-      <router-link to='/about'><v-btn text><v-icon>mdi-calendar-outline</v-icon></v-btn></router-link>
+      <router-link to='/logs'><v-btn text><v-icon>mdi-calendar-outline</v-icon></v-btn></router-link>
       <router-link to='/'><v-btn text><v-icon>mdi-home-outline</v-icon></v-btn></router-link>
       <router-link to='/profile'><v-btn text><v-icon>mdi-account-outline</v-icon></v-btn></router-link>
     </v-app-bar>
@@ -21,11 +16,13 @@
 </template>
 
 <script>
+import Heading from './components/Heading'
 import Cash from './components/Cash'
 
 export default {
   name: 'App',
   components:{
+    Heading,
     Cash
   }
 };
