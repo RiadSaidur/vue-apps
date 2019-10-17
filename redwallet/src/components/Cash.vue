@@ -1,5 +1,5 @@
 <template>
-    <v-card-text class="text-uppercase red--text">Current Cash: <span class="white--text">{{cash}}</span> BDT</v-card-text>
+    <v-card-text class="text-uppercase red--text">Current Cash: <span class="white--text">{{current.cash}}</span> BDT</v-card-text>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   name: 'Cash',
   computed:{
     ...mapState([
-      'cash'
+      'current'
     ])
   }
 };

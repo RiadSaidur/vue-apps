@@ -13,16 +13,20 @@
       v-model="amount"
       dark
       ></v-text-field>
-      <v-btn @click="addRecord" dark>Submit</v-btn>
     </v-form>
+    <Popup @accepted='addRecord' @canceled='resetForm' />
   </v-container>
 </template>
 
 <script>
 import { mapMutations } from 'vuex';
+import Popup from '../components/Popup'
 export default {
   name: 'Transactions',
   props:['type'],
+  components:{
+    Popup
+  },
   data(){
     return{
       title: '',
@@ -50,8 +54,11 @@ export default {
         this.title = '';
         this.amount = '';
         this.ADD_RECORD(record);
-        alert('record added');
       }
+    },
+    resetForm(){
+      this.title = '';
+      this.amount = '';
     }
   }
 };
