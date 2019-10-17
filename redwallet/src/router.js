@@ -38,6 +38,12 @@ export default new Router({
       path: '/logs',
       name: 'logs',
       component: () => import('./views/Logs.vue')
+    },
+    {
+      path: '/items/:id',
+      name: 'items',
+      props: true,
+      component: () => import('./views/Items.vue')
     }
   ]
 })
