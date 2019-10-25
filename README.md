@@ -1,7 +1,7 @@
 # vue-apps
 a repository for vue-apps
 
-###Index:
+### Index:
 
 1. [Mars Rover images with NASA Open Api](/nasa-api)
 2. [NotePad](/rednot)
